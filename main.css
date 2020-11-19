@@ -18,7 +18,6 @@ tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
-  background-image: url('"bg02.png");
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -32,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	background-image: url('"bg02.png");
 }	
 ol, ul {
 	list-style: none;
