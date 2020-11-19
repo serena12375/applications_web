@@ -118,7 +118,7 @@ body {
 -------------------------------------------------------------- */
 
 a {
-    color: #383838;
+    color: #f5efef;
     transition: all 0.5s;
 }
 a:focus {
@@ -202,7 +202,7 @@ blockquote {
     border-left: 4px solid #787878;
     line-height: 25px;
     font-weight: 100;
-    color: #787878;
+    color: #08f1de;
 }
 blockquote p {
     display: inline;
@@ -222,7 +222,7 @@ ul.sublist {
 }
 
 #about h1, h4 {
-    color: #616161 !important;
+    color:#08f1de !important;
 }
 
 
@@ -270,7 +270,7 @@ ul.sublist {
     font-size: 60px;
     font-weight: 700;
     margin: 0;
-    color: #616161 !important;
+    color:#08f1de !important;
 }
 .main-title h6 {
     font-family: 'Ubuntu', sans-serif;
@@ -314,7 +314,7 @@ ul.sublist {
     width: 100%;
 }
 .pagination-ef li a:hover {
-    color: #333;
+    color: rgb(8, 6, 6);
     background-color: #7beec7;
 }
 .pagination-ef li {
@@ -450,7 +450,7 @@ ul.sublist {
     width: 100%;
     height: 100%;
     z-index: 99999;
-    background: rgba(232, 232, 232, 0.95);
+    background: rgba(243, 180, 180, 0.95);
 }
 
 /* =Header
@@ -580,7 +580,7 @@ a:hover>span.site-name{
 }
 .header-page .inner-content {
     padding: 25px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(247, 180, 180, 0.8);
     display: table;
     height: 410px;
     width: calc(100% - 40px);
@@ -836,7 +836,7 @@ svg {
     width: 28%;
     bottom: 30%;
     left: 12%;
-    color: #fff;
+    color:#08f1de;
     transition: -webkit-transform 0.5s 0.8s, opacity 0.5s 0.8s;
     transition: transform 0.5s 0.8s, opacity 0.5s 0.8s;
     will-change: transform, opacity;
@@ -1170,7 +1170,7 @@ span.border-text {
     height: 100%;
     top: 0;
     left: 50%;
-    background: #bdc3c7;
+    background: #d7eaf7;
 }
 .close-button::before {
     -webkit-transform: rotate(45deg);
@@ -2209,24 +2209,24 @@ span.press {
 }
 @-webkit-keyframes fade {
     0% {
-        color: #transparent;
+        color: #f5efef;
     }
     50% {
         color: #505050;
     }
     100% {
-        color: #transparent;
+        color: #f5efef;
     }
 }
 @keyframes fade {
     0% {
-        color: #transparent;
+        color: #f5efef;
     }
     50% {
         color: #505050;
     }
     100% {
-        color: #transparent;
+        color: #f5efef;
     }
 }
 @-webkit-keyframes size {
