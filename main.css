@@ -31,7 +31,6 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-	background-image: url('"bg02.png");
 }	
 ol, ul {
 	list-style: none;
@@ -2178,12 +2177,12 @@ input, select, textarea {
 			background-color: rgba(0, 0, 0, 0.15) !important;
 			box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
 			font-weight: 700;
-			color: ##008000;
+			color: #008000;
 		}
 
 		#nav li:hover a {
 			background-color: rgba(255, 255, 255, 0.1);
-			color: ##008000;
+			color: #008000;
 		}
 
 /* Sidebar */
@@ -2204,7 +2203,7 @@ input, select, textarea {
 		top: 0;
 		width: 100%;
 		z-index: 10001;
-		background: #364050 url("images/bg01.png");
+		background: #364050 url("bg01.png");
 	}
 
 		#titleBar .title {
@@ -2315,7 +2314,7 @@ input, select, textarea {
 			}
 
 		#sidebar strong, #sidebar b {
-			color: ##008000;
+			color: #008000;
 		}
 
 		#sidebar a {
@@ -2323,7 +2322,7 @@ input, select, textarea {
 		}
 
 		#sidebar h2, #sidebar h3, #sidebar h4, #sidebar h5, #sidebar h6 {
-			color: ##008000;
+			color: #008000;
 		}
 
 		#sidebar header {
