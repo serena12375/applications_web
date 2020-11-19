@@ -66,12 +66,12 @@ body {
     width: 7px;
 }
 ::-webkit-scrollbar-thumb {
-    background: #aeaeae;
+    background: #2e2d2d;
     -webkit-border-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
-    background: rgb(56, 52, 52);
+    background: rgb(31, 28, 28);
     cursor: pointer;
 }
 ::-moz-selection {
@@ -80,14 +80,14 @@ body {
 }
 ::selection {
     background: #060606;
-    color: #fff;
+    color: rgb(44, 35, 35);
 }
 ::-moz-selection {
     background: #060606;
-    color: #fff;
+    color: rgb(34, 33, 33);
 }
 ::-webkit-input-placeholder {
-    color: #787878;
+    color: #352c2c;
     font-size: 14px;
     letter-spacing: 1pt;
     font-family: 'Ubuntu', sans-serif;
@@ -95,7 +95,7 @@ body {
 :-moz-placeholder {
     /* Firefox 18- */
     
-    color: #787878;
+    color: #363030;
     font-size: 14px;
     letter-spacing: 1pt;
     font-family: 'Ubuntu', sans-serif;
@@ -103,13 +103,13 @@ body {
 ::-moz-placeholder {
     /* Firefox 19+ */
     
-    color: #787878;
+    color: #413434;
     font-size: 14px;
     letter-spacing: 1pt;
     font-family: 'Ubuntu', sans-serif;
 }
 :-ms-input-placeholder {
-    color: #787878;
+    color: #272525;
     font-size: 14px;
     letter-spacing: 1pt;
     font-family: 'Ubuntu', sans-serif;
@@ -118,7 +118,7 @@ body {
 -------------------------------------------------------------- */
 
 a {
-    color: #ffffff;
+    color: #634040;
     transition: all 0.5s;
 }
 a:focus {
@@ -126,7 +126,7 @@ a:focus {
 }
 a:hover,
 a:focus {
-    color: #7beec7;
+    color: #106347;
     text-decoration: none;
 }
 a,
@@ -144,7 +144,7 @@ small {
     font-size: 0.8em;
 }
 p {
-    color: #424242;
+    color: #0a0808;
     line-height: 30px;
     font-size: 20px;
     font-weight: 100;
@@ -199,7 +199,7 @@ blockquote {
     margin: 30px 0 30px;
     padding: 0 0 0 20px;
     font-size: 18px;
-    border-left: 4px solid #787878;
+    border-left: 4px solid #463939;
     line-height: 25px;
     font-weight: 100;
     color: #0a867c;
@@ -309,13 +309,13 @@ ul.sublist {
     font-weight: 100;
     font-size: 18px;
     font-family: 'Lekton', sans-serif;
-    border: 1px solid #fffefe;
+    border: 1px solid #332e2e;
     display: inline-block;
     width: 100%;
 }
 .pagination-ef li a:hover {
     color: rgb(8, 6, 6);
-    background-color: #7beec7;
+    background-color: #114d39;
 }
 .pagination-ef li {
     line-height: 48px;
@@ -341,11 +341,11 @@ ul.sublist {
     height: 50px;
     background-color: #26C6DA;
     text-align: center;
-    color: #fff;
+    color: rgb(85, 62, 62);
     z-index: 9;
 }
 .scroll-top i {
-    color: #fff;
+    color: rgb(77, 63, 63);
     font-size: 48px;
 }
 
@@ -537,7 +537,7 @@ a:hover>span.site-name{
     left: 0;
     top: 0;
     font-weight: normal;
-    color: rgb(201, 201, 201);
+    color: rgb(34, 33, 33);
 }
 .cd-words-wrapper b.is-visible {
     position: relative;
@@ -959,7 +959,7 @@ span.border-text {
     height: 25px;
     margin-left: 0;
     padding: 0;
-    border: 2px solid #f7f7f7;
+    border: 2px solid #201111;
     border-radius: 20px;
     -moz-transition: all 0.25s ease 0.3s;
     -o-transition: all 0.25s ease 0.3s;
@@ -1081,7 +1081,7 @@ span.border-text {
 }
 .content {
     position: relative;
-    background: #b4bad2;
+    background: #3a4fa3;
 }
 .content::before {
     position: fixed;
@@ -1423,7 +1423,7 @@ ul.sub-menu li a {
 }
 .menu-information p {
     font-family: 'Lekton', sans-serif;
-    color: #fff;
+    color: rgb(43, 35, 35);
     padding-left: 71px;
     line-height: 18px;
     font-weight: 600;
@@ -1439,7 +1439,7 @@ ul.sub-menu li a {
     padding-right: 15px;
     display: block;
     list-style: none;
-    color: #fff;
+    color: rgb(49, 38, 38);
     letter-spacing: 2.5pt;
     font-family: 'Lekton', sans-serif;
 }
@@ -1484,7 +1484,7 @@ ul.sub-menu li a {
 
 .btnMe {
     background-color: rgb(250, 208, 21);
-    color: white;
+    color: rgb(87, 79, 79);
 }
 
 /* =Home Content
@@ -1545,8 +1545,8 @@ ul.sub-menu li a {
     position: relative;
     height: 325px;
     width: 100%;
-    background-color: #616161;
-    border: 30px solid #616161;
+    background-color: #eee2e2;
+    border: 30px solid #443f3f;
     display: table;
     text-align: center;
 }
@@ -1579,7 +1579,7 @@ ul.sub-menu li a {
     background: #7beec7;
     border: 0;
     margin-top: 30px;
-    color: #fff;
+    color: rgb(63, 51, 51);
     font-size: 18px;
     letter-spacing: 1.5pt;
 }
@@ -1670,7 +1670,7 @@ ul.sub-menu li a {
 }
 .our-studio-content h1,
 .our-studio-content p {
-    color: #fff;
+    color: rgb(65, 47, 47);
 }
 .our-studio-content hr {
     background: #fff;
