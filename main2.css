@@ -59,7 +59,7 @@ body {
 ::-webkit-scrollbar {
     width: 10px;
     height: 5px;
-    background-color: #eee;
+    background-color: rgb(255, 255, 255);
     -webkit-border-radius: 0;
 }
 ::-webkit-scrollbar:hover {
@@ -71,7 +71,7 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
-    background: #bbb;
+    background: rgb(56, 52, 52);
     cursor: pointer;
 }
 ::-moz-selection {
@@ -118,7 +118,7 @@ body {
 -------------------------------------------------------------- */
 
 a {
-    color: #f5efef;
+    color: #ffffff;
     transition: all 0.5s;
 }
 a:focus {
@@ -202,7 +202,7 @@ blockquote {
     border-left: 4px solid #787878;
     line-height: 25px;
     font-weight: 100;
-    color: #08f1de;
+    color: #0a867c;
 }
 blockquote p {
     display: inline;
@@ -309,7 +309,7 @@ ul.sublist {
     font-weight: 100;
     font-size: 18px;
     font-family: 'Lekton', sans-serif;
-    border: 1px solid #f4f4f4;
+    border: 1px solid #fffefe;
     display: inline-block;
     width: 100%;
 }
@@ -450,7 +450,7 @@ ul.sublist {
     width: 100%;
     height: 100%;
     z-index: 99999;
-    background: rgba(243, 180, 180, 0.95);
+    background: rgba(250, 250, 250, 0.95);
 }
 
 /* =Header
