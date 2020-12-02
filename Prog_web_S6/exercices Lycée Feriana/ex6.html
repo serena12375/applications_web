@@ -1,0 +1,24 @@
+<html> 
+<head>
+  <title>Calcul</title>
+
+<script language ="JavaScript"> 
+function calcul()
+{ 
+    var a=document.f.zt1.value; 
+    var b=eval(a);
+    document.f.zt2.value=b;
+}
+</script> 
+</head>
+
+<body>
+
+<FORM name="f"> 
+<INPUT type="text" name="zt1" >  
+<INPUT type="button" value="=" onclick="calcul()"> 
+<INPUT type="text" name="zt2" > <br>
+
+<a href="#" onclick="resultat()">voir</a> 
+
+</FORM> </body> </html> 

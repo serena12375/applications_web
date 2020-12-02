@@ -1,0 +1,24 @@
+<html> 
+<head>
+  <title>Nombre de jours</title>
+</head> 
+<body> 
+<script language ="JavaScript"> 
+
+mois=Number(prompt("donnez le num du mois"));
+annee=Number(prompt("donnez l' annee"));
+
+switch(mois)
+{
+    case 1: case 3: case 5: case 7: case 8: case 12:j=31;
+    break;
+    case 4: case 6: case 9: case 11:j=30;
+    break;
+    case 2:if(annee%4==0) j=29;
+           else j=28;
+    break;        
+}
+
+document.write("le nombre de jours est : "+j); 
+</script> </body> </html> 
+ 
