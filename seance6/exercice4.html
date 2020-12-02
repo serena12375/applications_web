@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Compteur de visite</h1>
+    <p>Le nombre de visite est <h3 id="nbr"></h3> </p>
+    
+</body>
+<script>
+    if(typeof(localStorage)=="undefined"){
+        alert("Error");
+    }else{
+        if(!localStorage.visites) localStorage.setItem("visites","0");
+        var nb="";
+        nb = parseInt(localStorage.getItem("visites"));
+        nb++;
+        localStorage.setItem("visites",nb);
+        console.log(nb);
+        document.getElementById("nbr").innerHTML=nb;
+    }
+
+</script>
+</html>

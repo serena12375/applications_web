@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercice 3</title>
+  
+</head>
+<body>
+        <img id="madelaine" draggable="true" src="madelaine.png" width="275" height="183" alt="" >
+    <div style="background-image: url('tassethe.jpg');height:1000px;width:1200px;"    >
+      
+    </div>
+</body>
+<script>
+        let currentDroppable = null;
+    
+        madelaine.onmousedown = function(event) {
+    
+          let shiftX = event.clientX - madelaine.getBoundingClientRect().left;
+          let shiftY = event.clientY - madelaine.getBoundingClientRect().top;
+    
+          madelaine.style.position = 'absolute';
+          madelaine.style.zIndex = 1000;
+          document.body.append(madelaine);
+    
+          moveAt(event.pageX, event.pageY);
+    
+          function moveAt(pageX, pageY) {
+            madelaine.style.left = pageX - shiftX + 'px';
+            madelaine.style.top = pageY - shiftY + 'px';
+          }
+    
+          function onMouseMove(event) {
+            moveAt(event.pageX, event.pageY);
+    
+            madelaine.hidden = true;
+            let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+            madelaine.hidden = false;
+    
+            if (!elemBelow) return;
+    
+            let droppableBelow = elemBelow.closest('.droppable');
+            if (currentDroppable != droppableBelow) {
+              if (currentDroppable) { // null when we were not over a droppable before this event
+                leaveDroppable(currentDroppable);
+              }
+              currentDroppable = droppableBelow;
+              if (currentDroppable) { // null if we're not coming over a droppable now
+                // (maybe just left the droppable)
+                enterDroppable(currentDroppable);
+              }
+            }
+          }
+    
+          document.addEventListener('mousemove', onMouseMove);
+    
+          madelaine.onmouseup = function() {
+            document.removeEventListener('mousemove', onMouseMove);
+            madelaine.onmouseup = null;
+          };
+    
+        };
+    
+        function enterDroppable(elem) {
+          elem.style.background = 'pink';
+        }
+    
+        function leaveDroppable(elem) {
+          elem.style.background = '';
+        }
+    
+        madelaine.ondragstart = function() {
+          return false;
+        };
+      </script>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="./jQueryAssets/jquery-1.11.1.min.js"></script>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+</head>
+
+<body>
+	
+    <div class="container">
+    	<h2>To Do List</h2>
+    
+<form id="formulaire">
+			
+	<label for="titre_tache">Titre de tâche:</label>
+			<input type="text" id="titre_tache">
+			<label for="date_tache">Date </label>
+		  <input type="date" id="date_tache">
+			<label for="texte">Description</label>
+		  <textarea id="descript"></textarea>
+	<label for="etat_tache">Importance</label>
+	
+	<input type="range" id="etat_tache"  max="100" min="0" step="10" value="0" >
+
+ 
+	<input type="button" id="submitBtn" value="Ajouter"/>
+	<input type="button" id="initBtn" value="SupprimerTT"/>
+	  </form>
+    
+			<br/>
+	      
+      <table border=2 id="tacheListe">
+	 
+	</table> 
+    
+    </div>
+</body>
+	
+ 
+</html>
+
+<script>
+$(document).ready(function(){
+
+	if (!localStorage.visite)
+		localStorage.visite=0;
+	if (!sessionStorage.visite)
+		sessionStorage.visite=0;
+	alert(localStorage.visite);
+	alert(sessionStorage.visite);
+	localStorage.visite=Number(localStorage.visite)+1;
+	sessionStorage.visite=Number(sessionStorage.visite)+1;
+	alert ("nombre de visite par localstorage: "+ localStorage.visite);
+    alert ("nombre de visite par Sessionstorage: "+ sessionStorage.visite);
+	
+	
+
+   $("#initBtn").click(function(){ 
+	   
+	   
+	   alert(" vous allez Tout initialise :"+localStorage.TodoListe);
+	   localStorage.clear();
+	   sessionStorage.clear();
+	   $('table').html("");
+   });
+	
+	$("#submitBtn").click(function(){        
+
+   var Todo={};
+	Todo.titre = $('#titre_tache').val();
+    Todo.desc = $('#descript').val();
+	Todo.date=	$('#date_tache').val();
+	Todo.etat=	$('#etat_tache').val();
+	
+	 	
+		if (!localStorage.TodoListe)
+			{	
+				var TodoListe_Tab=[];
+		        TodoListe_Tab.push(Todo);
+				//Onplacel'objetenmémoireentransformantleJSONenchainedecaracteres
+				localStorage.TodoListe	=JSON.stringify(TodoListe_Tab);
+			}
+		else 
+	      {  
+	            var recupTodoListe=JSON.parse(localStorage.TodoListe);
+				var TodoListe_Tab=recupTodoListe.splice(0);//permet de copier un array 
+				TodoListe_Tab.push(Todo);
+			    //Onplacel'objetenmémoireentransformantleJSONenchainedecaracteres
+                localStorage.TodoListe	=JSON.stringify(TodoListe_Tab);
+	       }
+		$('table').html("");
+		for (var i=0;i<TodoListe_Tab.length;i++)
+			{
+				
+			
+		$('table').append('<tr>' + '<td>'+ TodoListe_Tab[i].titre +'</td>'
+				         + '<td>'+ TodoListe_Tab[i].date +'</td>'
+				         + '<td>'+ TodoListe_Tab[i].desc +'</td>'
+				         + '<td>'+ TodoListe_Tab[i].etat +'</td>'
+				  				  
+				  + '</tr>');
+		
+			}
+	
+	 
+
+		
+		
+$("#formulaire").trigger("reset");
+
+    });
+
+});
+
+</script>

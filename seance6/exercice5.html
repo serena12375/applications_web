@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        form {
+  
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    
+    
+}   
+        form div + div {
+            margin-top: 1em;
+    }
+    label {
+        display: inline-block;
+        width: 130px;
+        text-align: right;
+        
+    }
+    
+    .button{
+        padding-left: 140px;
+        
+    }
+    button {
+        margin-left: 10px;
+
+    }
+    #welcom {
+        visibility: hidden;
+    }
+    </style>
+    <title>Formulaire</title>
+</head>
+<body>
+    
+    <form action="" method="POST" id="f">
+            <h1>Formulaire</h1>
+           
+        <div>
+            <label for="firstName">First name(*) </label>
+            <input type="text" placeholder="Name" oninput="localStorage.setItem('firstname', this.value);" id="firstName" required>
+        </div>
+        <div>
+            <label for="lastName">Last name(*) </label>
+            <input type="text" id="lastName" oninput="localStorage.setItem('lastname', this.value)" required >
+        </div>
+        <div>
+            <label for="titreCivilite">Titre Civilite(*)</label>
+            <input type="text" id="titreCivilite" oninput="localStorage.setItem('titrecivilite', this.value)" required>
+        </div>
+     
+     
+        <div class="button" >
+            <button type="reset" >Cancel</button>
+            <button type="submit" >Submit</button>
+        </div>
+        
+    </form>
+    <div id="welcom" >
+        Bonjour <p id="civil"></p> <p id="name"></p> , vous avez visite cette page <p id="nbr"></p> fois.
+    </div>
+</body>
+
+<script>
+    if(typeof(localStorage)=="undefined"){
+        alert("Error");
+    }else{
+        if(!localStorage.visites) localStorage.setItem("visites","0");
+        var nb="";
+        nb = parseInt(localStorage.getItem("visites"));
+        nb++;
+        localStorage.setItem("visites",nb);
+        if(nb>1&&localStorage.getItem('firstname')) {
+            var name = localStorage.getItem('firstname') + " " + localStorage.getItem('lastname');
+            var ct = localStorage.getItem('titrecivilite');
+            document.getElementById('f').style.visibility='hidden';
+            document.getElementById('civil').innerHTML=ct;
+            document.getElementById('name').innerHTML=name;
+            document.getElementById('nbr').innerHTML=nb;
+            document.getElementById('welcom').style.visibility='visible'
+        }
+        
+        //document.getElementById('f').style.visibility = 'hidden';
+    }
+</script>
+
+</html>

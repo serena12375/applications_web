@@ -1,0 +1,194 @@
+
+  
+<!DOCTYPE html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script>
+$('#bouton1').click(function() { 
+          if($('#x1').is(":hidden")){alert("caché")};
+          $('#x1').html('mon texte');
+          $('#x1').click(function(){
+            if($('#x1').is(":visible")){alert("visible")};})
+          }); 
+$('#bouton2').click(function() { 
+         
+          $('.sp1').html('mon texte 1');
+          $('.sp2').html('mon texte 2');
+          $('#x2').html('Ce DIV est initialement dans le DOM en fin de fichier');
+          $('#x3').html('ajouter un texte après les spans');
+          $('#x3').click(function(){
+            $("Un petit texte à insérer dans le DOM juste après les spans").insertAfter('.sp2');})
+         
+        }); 
+       
+$("afficher_texte").click(function(){
+    alert("le texte contenu est" + "#mon_textarea")
+});
+document.getElementById('no_paste').addEventListener('keydown',
+function (foo)
+{
+    if (foo.keyCode == 86) 
+    {
+      alert('Le collage de texte n est pas autorisé !');
+      foo.preventDefault();
+    }
+ });
+ function supprimer_dernier_caractere(elm) {
+  var val = $(elm).val();
+var cursorPos = elm.selectionStart;
+$(elm).val(
+   val.substr(0,cursorPos-1) + // before cursor - 1
+  val.substr(cursorPos,val.length) // after cursor
+)
+elm.selectionStart = cursorPos-1; // replace the cursor at the right place
+elm.selectionEnd = cursorPos-1;
+}
+
+$(document).ready( function () {
+  // Supprime le dernier caractère s'il n'est pas alphanumérique sur evt keyup
+  $('body').delegate('input.only_alpha_num','keyup',function(){
+    if(!$(this).val().match(/^[0-9a-z]*$/i)) // a-z et 0-9 uniquement
+      supprimer_dernier_caractere(this);
+  });
+
+
+// Annulation du "coller" dans l'input texte auquel on a affecté l'identifiant "no_paste"
+document.getElementById('no_paste').addEventListener('keydown', 
+  function (foo){
+    if (foo.keyCode == 86)
+    {
+       // alert('Vous avez copié du texte');
+foo.preventDefault();
+    }
+ });
+
+
+}) ;
+$("#mon_image").hover(
+   function () {
+     $(this).attr('src','monimage1.jpg');  
+   },
+   function () {
+      $(this).attr('src','monimage2.jpg');  
+   }
+); 
+ 
+ $(document).ready( function () {
+    $( "#moncalendrier").datepicker({ showOn: "both",                           
+        buttonImage: "../img/b_calendar.png",
+        buttonImageOnly: true,
+        buttonText:'Cliquer pour choisir une date',
+        onClose: function(dateText, inst) {  }, $options });
+
+    $('#moncalendrier').focus();
+       
+});    
+
+
+$('a img').hover(
+   function(){ $(this).animate({ opacity : '.75' }); },
+   function(){ $(this).animate({ opacity : '1' }); }
+  );
+
+
+  
+
+  $('html').click(function(event){
+     if(event.target.id == 'id_de_mon_element') {
+       alert ("j'ai cliqué sur mon élément");
+     } else {
+       alert ("j'ai cliqué à l'extérieur de mon élément");
+     }
+ });
+
+ 
+  $.maFonction =(function() {
+    var today = new Date();
+    var ladate=Date.parse(today);
+    var lannee = today.getFullYear();
+    var dateprintemps  =Date.parse(new Date(lannee, 2, 21));
+    var dateete        =Date.parse(new Date(lannee, 5, 21));
+    var dateautomne    =Date.parse(new Date(lannee, 8, 21));
+    var datehiver      =Date.parse(new Date(lannee, 11, 21));
+    if(ladate>=dateprintemps && ladate<dateete){
+      $("#monimage").css({backgroundImage: "url('img/Fond-Printemps.png')"}); }
+    else if(ladate>=dateete && ladate<dateautomne){
+      $("#monimage").css({backgroundImage: "url('img/Fond-Ete.png')"});  }
+    else if(ladate>=dateautomne && ladate<datehiver){
+      $("#monimage").css({backgroundImage: "url('img/Fond-Automne.png')"});  }
+    else if(ladate>=datehiver || ladate<dateprintemps){
+      $("#monimage").css({backgroundImage: "url('img/Fond-Hiver.png')"});  }
+     
+      alert('Vous avez défini la fonction avec succès!'); 
+        
+        $(".btn").click(function(){
+          $.maFonction();
+        });
+});
+
+    </script>
+</head>
+        <body>
+           <hr>
+            <input type="button" id="bouton1" style="padding: 7px 80px " value="app1">
+            <div id="x1"></div>
+            </hr>
+
+            <hr>
+            <input type="button" id="bouton2" style="padding: 7px 80px " value="app2">
+            <span class="sp1"></span>
+            <span class="sp2"></span>
+            <div id="x2"></div>
+            <i id="x3" style="text-decoration: underline;"></i>
+           </hr>
+          <hr>
+          <input type="button" style="padding: 7px 80px " value="app3">
+          <textarea id="mon_textarea"> mon texte </textarea>
+          <input type="button"  value="afficher le texte " id="afficher_texte">
+        </hr>
+        <hr>
+        <input type="button" style="padding: 7px 80px " value="app4">
+        <input type="texte" id="no_paste" />
+        <hr>
+        <hr>
+        <input type="button" style="padding: 7px 80px " value="app5">
+            <input type="text" name="cache-texte" class="only_alpha_num" id="no_paste"/>
+    </hr>
+    <hr>
+    <input type="button" style="padding: 7px 80px " value="app6">
+    <img id="mon_image" src="monimage2.jpg" alt="survolez cette image "/>
+    
+    <hr>
+   <hr>
+   <input type="button" style="padding: 7px 80px " value="app7">
+   <input id="moncalendrier" type="date"  name="moncalendrier" value="04/12/2012"/>
+</hr>
+<hr>
+<input type="button" style="padding: 7px 80px " value="app9">
+<a href="#">
+    <img src="img/image2.jpg" alt ="effet sur survol de l image"/>
+  </a>
+ </hr>
+ <hr>
+ <input type="button" style="padding: 7px 80px " value="app10">
+ <a href ="javascript:nomfonction()">Cliquez ici</a>
+</hr>
+<hr>
+<input type="button" style="padding: 7px 80px " value="app11">
+<button type="button" class="btn">Cliquez ici</button>
+</hr>
+</body>
+</html>
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

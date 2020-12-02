@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        form {
+  
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+        form div + div {
+            margin-top: 1em;
+    }
+    label {
+        display: inline-block;
+        width: 130px;
+        text-align: right;
+    }
+    select {
+        width: 155px;
+        
+    }
+    .button{
+        padding-left: 140px;
+        
+    }
+    button {
+        margin-left: 10px;
+
+    }
+    </style>
+    <title>Contact</title>
+</head>
+<body>
+    
+    <form action="" method="POST">
+            <h1>Contact</h1>
+            <p>Be called back for more information</p>
+        <div>
+            <label for="firstName">First name(*) </label>
+            <input type="text" placeholder="Name" oninput="sessionStorage.setItem('username', this.value);" id="firstName" required>
+        </div>
+        <div>
+            <label for="lastName">Last name(*) </label>
+            <input type="text" id="lastName"  required>
+        </div>
+        <div>
+            <label for="contact">Contact option</label>
+            <select id="contact" onchange="changeOption()">
+                <option value="phone">Phone</option>
+                <option value="email">E-mail</option>
+            </select>
+        </div>
+        <div>
+            <label id="contactOption">Phone number</label>
+            <input type="text" name="contactOption">
+        </div>
+        <div>
+            <label for="date">When(*)</label>
+            <input type="date" id="date" required>
+        </div>
+        <div>
+            <label for="time">Between(*)</label>
+            <input type="time"  id="time" value="07:00"> and <input type="time" id="time" value="19:00">
+        </div>
+        <div id="google_canvas"></div>
+        <div class="button">
+            <button type="reset" >Cancel</button>
+            <button type="submit" >Submit</button>
+        </div>
+        
+    </form>
+</body>
+
+<script >
+   function changeOption() {
+       var contact = document.getElementById("contact").value;
+       var option = document.getElementById("contactOption");
+       if(contact == "phone")option.innerHTML = "Phone number";
+       else option.innerHTML = "E-mail"
+   }
+
+</script>
+
+</html>

@@ -1,0 +1,34 @@
+function enregistrer(){
+	var mail = $("#AddMail").val()
+	var prenom = $("#prenom").val()
+	var date_register = new Date()
+
+	var structure_utilisateur = {
+		mail : mail,
+		prenom : prenom,
+		date_register : date_register
+	}
+
+	/*if(!localStorage.user_data){
+		localStorage.user_data = [JSON.stringify(structure_utilisateur)]
+	}else{
+		localStorage.user_data.push(JSON.stringify(structure_utilisateur))
+	}*/
+	localStorage.user_data=JSON.stringify(structure_utilisateur)
+	alerte()
+}
+
+
+// Ombrer tout le texte du document
+$("body").css('text-shadow','2px 2px 5px black')
+
+// Afficher l'image
+$("img").show()
+
+
+// Afficher alerte nouveau utilisateur inscrit
+function alerte(){
+	user_data_local = localStorage.user_data
+	user_dt = JSON.parse(user_data_local)
+	alert("Bienvenu mr : "+user_dt.prenom+" , votre email est : "+user_dt.mail)
+}
