@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <title>Ma premiere page </title>
+         <meta charset=UTF-8>
+         <meta name="Description"
+ content="Introduction au langage HTML">
+    </head>
+    
+    <body>
+        <form>
+            <h1> Piquenique Multiassociations</h1>
+            <img src="repas.jpg"  />
+            <h2> inscription </h2>
+            <label for="pseudo"> Prenom: </label> 
+            <input type="text" name="pseudo" id="prenom" />
+            <br/> <br/>
+            <label for="pass">Mot de passe</label>
+            <input type="password" name="pass" id="mdp" />
+            <br/><br/>
+            <label for="association">associations: </label>
+            <select name="association" size="1">
+                <option selected>associationX</option>
+                <option>associationY</option>
+
+            </select>
+            <br/>
+            <label for="Dispo">Disponibilite pour la semaine du :</label>
+            <input type="date" name="date"/> <br/><br/>
+            <input type="checkbox" name="lundi"/>
+             <label for="lundi">lundi</label>
+            <input type="checkbox" name="mardi"/>
+            <label for="mardi">mardi</label>
+            <input type="checkbox" name="mercredi"/>
+            <label for="mercredi">mercredi</label>
+            <input type="checkbox" name="jeudi"/>
+            <label for="jeudi">jeudi</label>
+            <input type="checkbox" name="vendredi"/>
+             <label for="vendredi">vendredi</label><br/> <br/>
+            <label for="contribution">contribution : </label>
+            <input type="radio" name="entree">
+            <label for="entree">Entree</label>
+            <input type="radio" name="plat">
+            <label for="plat">Plat</label>
+            <input type="radio" name="dessert">
+            <label for="dessert">Dessert </label> <br/> <br/>
+            <button >Soummettre</button>
+        </form>
+
+    
+<script>
+    var link = document.getElementsByTagName('a')[0];
+    var newLabel= document.createTextNode('et un hyperlien');
+    link.replaceChild(newLabel, link.firstChild);
+        </script>
+
+
+
+    </body>
+</html>
