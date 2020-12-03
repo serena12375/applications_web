@@ -18,7 +18,6 @@ $.fn.tinyLightbox = function ( options ) {
         !$.data(this, 'tinyLightbox') && $.data( this, 'tinyLightbox', new tinyLightbox(this, options)).init();
     });
 };
-
 /* defaults */
 $.fn.tinyLightbox.defaults = {
     item: 'a', // selector inside of container
